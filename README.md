@@ -13,6 +13,9 @@ npm run serve   #start dev server
 
 ## Documentation
 
+Website Link: https://china-vs-japan-tech-visualization.vercel.app/ 
+
+
 ### Use of generative AI
 I used Claude 3.7 Sonnet to assist with various aspects of this project. The complete chat history can be found [here](https://docs.google.com/document/d/1U-JFP5q7qGjnglEz_PnmBzT08kqPgVCnI1E0WefCLWA/edit?tab=t.0).
 
