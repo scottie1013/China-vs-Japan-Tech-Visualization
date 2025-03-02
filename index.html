@@ -1,14 +1,143 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>DSCI 554 Assignment 5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China vs Japan Technology Dashboard</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/styles/main.css">
 </head>
-
 <body>
-    
-    The body contains all visible content!
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="row bg-primary text-white p-3 mb-4">
+            <div class="col">
+                <h1 class="text-center">China vs Japan Technology Comparison</h1>
+            </div>
+        </header>
+        
+        <!-- Controls Section -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h4>Dashboard Controls</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="techSectorSelect">Technology Sector:</label>
+                                    <select class="form-select" id="techSectorSelect">
+                                        <option value="All">All Sectors</option>
+                                        <option value="Software">Software</option>
+                                        <option value="Semiconductor">Semiconductor</option>
+                                        <option value="Robotics">Robotics</option>
+                                        <option value="AI">AI</option>
+                                        <option value="Cloud Computing">Cloud Computing</option>
+                                        <option value="Telecommunications">Telecommunications</option>
+                                        <option value="Biotechnology">Biotechnology</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="metricSelect">Comparison Metric:</label>
+                                    <select class="form-select" id="metricSelect">
+                                        <option value="Market Share (%)">Market Share (%)</option>
+                                        <option value="R&D Investment (in USD)">R&D Investment</option>
+                                        <option value="Number of Patents Filed (Annual)">Patents Filed</option>
+                                        <option value="Number of Tech Companies">Tech Companies</option>
+                                        <option value="Tech Exports (in USD)">Tech Exports</option>
+                                        <option value="Number of Startups">Startups</option>
+                                        <option value="Venture Capital Funding (in USD)">VC Funding</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="yearRangeStart">Start Year:</label>
+                                    <select class="form-select" id="yearRangeStart">
+                                        <!-- Will be populated by JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="yearRangeEnd">End Year:</label>
+                                    <select class="form-select" id="yearRangeEnd">
+                                        <!-- Will be populated by JavaScript -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="yearSlider">Selected Year for Bar Chart:</label>
+                                    <input type="range" class="form-range" id="yearSlider" min="2000" max="2022" value="2022">
+                                    <div class="text-center mt-1">Year: <span id="yearDisplay">2022</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Charts Row 1 -->
+        <div class="row mb-4">
+            <!-- Market Share Bar Chart -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-light">
+                        <h4>Market Share Comparison</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="barChart" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trend Line Chart -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-light">
+                        <h4>Trend Analysis Over Time</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="lineChart" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Charts Row 2 -->
+        <div class="row mb-4">
+            <!-- Scatter Plot -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-light">
+                        <h4>R&D Investment vs Patents Filed</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="scatterPlot" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Table -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header bg-light">
+                        <h4>Technology Data Table</h4>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <div id="dataTable" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="dist/bundle.js"></script>
 </body>
-
 </html>
