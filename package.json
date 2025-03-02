@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "browser-sync start ./ -s --files './' --directory --watch --port 2000",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "start": "webpack serve"
   },
   "author": "",
